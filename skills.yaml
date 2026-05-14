@@ -1,0 +1,109 @@
+# Skills self-assessment: 0 (no experience) to 10 (expert)
+# Updated: 2026-05-13
+
+# Backend
+node.js: 9
+typescript: 8
+python: 3
+go: 2
+php: 6
+java: 5
+perl: 3
+
+# Frontend
+react: 7
+next.js: 7
+angular: 6
+svelte: 4
+tailwind: 6
+css/sass/less: 7
+html: 8
+
+# API & Architecture
+rest-api-design: 9
+swagger/openapi: 8
+microservices: 7
+distributed-systems: 7
+event-driven-architecture: 7
+single-tenant-architecture: 6
+monorepo: 6
+websockets: 7
+server-sent-events: 6
+
+# Databases
+sql/postgres: 7
+sql/mysql: 7
+nosql/mongodb: 7
+redis: 6
+opensearch: 5
+database-design: 7
+data-modeling: 7
+
+# Infrastructure & DevOps
+docker: 7
+kubernetes: 5
+aws: 7
+aws-lambda: 7
+aws-sns: 7
+aws-s3: 7
+aws-cloudwatch: 7
+gcp: 4
+alibaba-cloud: 4
+ci-cd: 7
+github-actions: 8
+heroku: 6
+digital-ocean: 5
+
+# Messaging & Streaming
+rabbitmq: 8
+message-queues: 8
+stomp: 5
+protobuf: 5
+
+# Payments & Fintech
+payments-processing: 9
+credit-card-processing: 8
+pci-compliance: 7
+mobile-payments: 7
+multi-currency: 8
+cross-border-payments: 8
+
+# Data & Functional
+data-processing-pipelines: 3
+functional-programming: 5
+oop-design: 7
+
+# AI & ML
+ai-ml-product-development: 7
+llm-applications: 7
+rag: 7
+prompt-engineering: 7
+
+# Web & Security
+seo: 6
+web-security: 7
+rbac-multi-tenant-auth: 7
+
+# Product & Growth
+a-b-testing: 7
+growth-engineering: 5
+
+# Other
+blockchain/ethereum: 5
+economics: 5
+product-management: 5
+ux-design: 4
+remote-team-leadership: 8
+
+# GraphQL
+graphql: 7
+
+# Additional AWS
+aws-api-gateway: 7
+aws-sqs: 7
+aws-dynamodb: 7
+
+# Niche tools (Noetica mentions)
+jujutsu: 0
+mise: 0
+pprof: 0
