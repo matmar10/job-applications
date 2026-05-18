@@ -2,8 +2,7 @@
 
 **Staff Software Engineer, Specializing in Payments**
 
-me@matmar10.com | (415) 601-4879 | Brooklyn, NY 11225
-US Citizen | Eastern Timezone
+me@matmar10.com | (415) 601-4879 | Brooklyn, NY 11225 | US Citizen | Eastern Timezone
 
 
 ## Summary of Qualifications

@@ -19,6 +19,7 @@ The README defines a two-phase process:
    - **(C) Tailored Resume**: Generate role-specific resume from `base-resume.md`, saved as `jobs/[company-name]/[job-title]/matthew-j-martin-resume-for-[job-title]-[company-name].md`. Then run `./generate-resume.sh <path-to-resume.md>` to produce the `.pdf` and `.docx` files, then `./upload-resume.sh <path-to-resume.md>` to upload them to Google Drive. Use the output URLs to set the Notion tracker's "Resumes" file property. Mark status "Resume Drafted".
      - **Startup roles**: If the company is a startup (early-stage, seed, Series A–C, or otherwise described as a startup), prepend **"Preference for early stage, high-pace startups"** as the very first bullet in the Summary of Qualifications section.
      - **Formatting**: Do not include horizontal line breaks (`---`) anywhere in the resume markdown.
+     - **Footer**: Every PDF and DOCX must include a footer reading "Resume of Matthew Joseph Martin – Staff Software Engineer  Page X of Y". This is handled automatically by `generate-resume.sh` (Typst header-includes for PDF; `add-footer.py` post-processor for DOCX) — no manual action needed.
      - **About This Resume section**: Include a `## About This Resume` section at the very bottom. Use this exact prose, substituting the role title and company name: "I tailored this resume to the [job title] role at [company name] using an AI-assisted workflow I built. It cross-references my base resume and skills inventory against your specific job requirements to surface where I'm a strong fit. The workflow is open source: [github.com/matmar10/job-applications](https://github.com/matmar10/job-applications)"
      - **Headline subtitle**: Default to **"Staff Software Engineer"** only. Only append a specialization (e.g., "Specializing in Payments" or "Specializing in Financial Systems & Payments") if the role explicitly calls out payments or financial systems as a core focus.
      - **Objective section**: Include an `## Objective` section immediately after the contact header (before Summary of Qualifications). Default text: "Fully in-office or hybrid role in NYC Metro Area in fast-paced, AI-native environment." If the role is a startup, append: "for an early to mid-stage, high-growth startup" (making the full sentence: "Fully in-office or hybrid role in NYC Metro Area in fast-paced, AI-native environment for an early to mid-stage, high-growth startup.")
@@ -29,7 +30,9 @@ The README defines a two-phase process:
 - `recent-resume.docx` — Source resume for synthesizing `base-resume.md`
 - `skills.yaml` — Skill keyword self-assessments (created during Phase I)
 - `base-resume.md` — Canonical generic resume (created during Phase I)
-- `generate-resume.sh` — Converts a `.md` resume to `.pdf` (pandoc+typst) and `.docx` (pandoc)
+- `generate-resume.sh` — Converts a `.md` resume to `.pdf` (pandoc+typst with custom template and footer) and `.docx` (pandoc + `add-footer.py`)
+- `add-footer.py` — Post-processes `.docx` files to inject the footer via python-docx (called automatically by `generate-resume.sh`)
+- `resume-template.typst` — Custom Typst template used by `generate-resume.sh` for PDF generation
 - `upload-resume.sh` — Uploads `.pdf` and `.docx` to Google Drive (shareable links), outputs URLs for Notion
 - `reqs/` — Incoming raw job requirement `.txt` files to be processed
 - `jobs/` — Per-company folders with job reqs and tailored resumes
