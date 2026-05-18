@@ -37,6 +37,12 @@ jobs/
     matthew-j-martin-resume-for-[job-title]-[company-name].docx
 ```
 
+## Why Not RAG?
+
+A natural next step would be to chunk `base-resume.md` into atomic units — one embedding per bullet, per role, per skills cluster — store them in a vector database, and retrieve only the most semantically relevant experience for each job req rather than passing the full resume as context. That's a legitimate architecture and would scale well if the source corpus grew to include GitHub projects, blog posts, or years of accumulated roles.
+
+It's not needed here because the entire base resume fits comfortably within the model's context window. RAG trades retrieval precision for the simplicity of full-context inclusion; at this corpus size, full inclusion wins. If the source material ever outgrows the context window, or if retrieval needs to span richer sources, adding a pgvector or sqlite-vec layer would be the natural next step.
+
 ## Why I Built This
 
 Applying thoughtfully at scale is a solved problem if you treat it like an engineering problem. This workflow keeps me honest about fit, saves time on formatting, and ensures every resume I send is genuinely tailored — not just a find-and-replace on a template.
