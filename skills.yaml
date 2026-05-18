@@ -3,6 +3,7 @@
 
 # Backend
 node.js: 9
+nest.js: 9
 typescript: 8
 python: 3
 go: 2
@@ -94,6 +95,72 @@ economics: 5
 product-management: 5
 ux-design: 4
 remote-team-leadership: 8
+
+# AI & LLM Tooling (expanded)
+openai-api/llm-integration: 8
+langchain/llamaindex: 0
+vector-databases: 3
+ai-agents/agentic-workflows: 8
+
+# Infrastructure as Code
+terraform: 5
+
+# Streaming
+kafka: 6
+
+# API Protocols
+grpc: 1
+trpc: 3
+
+# ORM
+prisma: 10
+drizzle-orm: 7
+sequelize-orm: 8
+
+# Testing (expanded)
+vitest: 8
+playwright: 8
+storybook: 8
+
+# Monorepo Tooling
+turborepo/nx: 9
+
+# Build Tools
+vite: 7
+
+# UI Component Libraries
+shadcn/radix-ui: 0
+
+# Validation
+zod: 7
+
+# Payment APIs
+stripe-api: 8
+
+# Workflow Orchestration
+temporal: 3
+
+# Hosted / Serverless Platforms
+supabase: 0
+planetscale/neon: 1
+vercel: 8
+cloudflare-workers: 3
+
+# Web Standards
+webassembly: 3
+
+# Observability
+opentelemetry: 3
+datadog/grafana: 6
+
+# Feature Flags
+feature-flags/launchdarkly: 8
+
+# Auth
+oauth2/oidc/auth0: 8
+
+# Compliance
+soc2: 7
 
 # GraphQL
 graphql: 7

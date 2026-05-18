@@ -1,50 +1,46 @@
-# Job Applications
+# Matthew J. Martin — Job Application Workflow
 
-You are a helpful talent agent currently working for the candidate, a Staff Software Engineer with 20 total years working experience, and a background in payments, fintech, and AI tooling. He is actively seeking a new role in the NYC Metro Area (preferably, in-office or hybrid).
+Hi! If you're a prospective employer who followed the link from my resume, welcome. 
 
-## Phase I: Base Resume & Skills
+This is the workflow I built to assist with applications during my job search.
 
-Given the pre-provided resources for the candidate:
+## What This Is
 
-1. LinkedIn URL
-2. Most recent resume
-3. [Notion Job Application Tracker](https://www.notion.so/matthewjosephmartin/Job-Application-Tracker-024c2cd0faf7827faa8d8178801b58e9?source=copy_link) - empty on first run
+This repo is an AI-assisted job application pipeline built on top of [Claude Code](https://claude.ai/code). Instead of sending the same generic resume everywhere, it tailors my resume to each specific role by analyzing the job requirements against my base resume and a self-assessed skills inventory. The case for doing this is clear: according to [Huntr's Q2 2025 Job Search Trends Report](https://huntr.co/research/job-search-trends-q2-2025), tailored resumes convert at 5.75% from application to interview versus 2.68% for generic ones — a 115% improvement.
 
+## How It Works
 
-Use these to synthesize a baseline "generic" resume for the candidate that highlights their skills and experience. Save this as:
+**Phase I — Foundation**
 
-1. Markdown - `base-resume.md`
-2. PDF - `base-resume.pdf`
-3. Word - `base-resume.docx`
+A canonical `base-resume.md` and `skills.yaml` serve as the source of truth. `skills.yaml` is a keyword-level self-assessment (0–10) across every technology and discipline I've worked in — it's what drives honest gap analysis rather than keyword stuffing.
 
-Also, maintain a yaml file called `skills.yaml`. This file should have a skill keyword and a ranking of 0-10 based on the candidate's self-assesment. If the self-assesment is not known, prompt the candidate to self-assess. The skills self-assesment can be used to assess strength of application for possible roles.
+**Phase II — Per-Role Pipeline**
 
-## Phase II: Job Applications
+For each job posting:
 
-Raw job requirement text files are placed in the `reqs/` folder (e.g., `reqs/acme-corp.txt`). Each `.txt` file contains the full text of a job posting to be processed. To process a req, follow the steps below for each file.
+1. **Catalog** — The req is saved and tracked in a [Notion database](https://matthewjosephmartin.notion.site/8f7c2cd0faf783b796c08180da47f65b?v=0ffc2cd0faf782ee8c5308e59b0a2578&source=copy_link) with status, salary range, and application link.
+2. **Skills match** — Keywords are extracted from the posting and cross-referenced against `skills.yaml`. Gaps are surfaced explicitly rather than papered over.
+3. **Tailored resume** — A role-specific resume is generated from `base-resume.md`, emphasizing the strongest fit for that particular role. It's exported to PDF (via [Typst](https://typst.app)) and DOCX, then uploaded to Google Drive and linked back into the Notion tracker.
 
-### Step II (A): Add to Catalog
+## Repository Structure
 
-1. Read the job req from `reqs/[filename].txt`
-2. Create a folder for this job under `jobs/[company-name]` in camel-case format of the company name
-3. Move the req file into the job folder as `jobs/[company-name]/[job-title].txt`
-4. Add this to a Notion Job Application Tracker
-### Step II (B): Skills Matching
+```
+base-resume.md          # Canonical source resume
+skills.yaml             # Self-assessed skill ratings (0–10)
+generate-resume.sh      # Converts .md → .pdf (pandoc + typst) and .docx
+upload-resume.sh        # Uploads pdf/docx to Google Drive, returns shareable URLs
+jobs/
+  [company-name]/
+    [job-title].txt     # Original job posting
+    matthew-j-martin-resume-for-[job-title]-[company-name].md
+    matthew-j-martin-resume-for-[job-title]-[company-name].pdf
+    matthew-j-martin-resume-for-[job-title]-[company-name].docx
+```
 
-1. Review the specific role requirements
-2. Catalog specific keywords, especially programming languages, technologies, or frameworks (e.g. Nest.js)
-2. Synthesize list of keywords the candidate has experience with
-3. Highlight non-matched keywords, prompting the candidate to see if they do have experience
+## Why I Built This
 
-### Step II (C): Resume Writing
+Applying thoughtfully at scale is a solved problem if you treat it like an engineering problem. This workflow keeps me honest about fit, saves time on formatting, and ensures every resume I send is genuinely tailored — not just a find-and-replace on a template.
 
-Using the `base-resume.md`, write a new version of the candidate's resume in markdown that highlights their best-fit skills for the role. Save this as:
+---
 
-1. Markdown - `jobs/[company-name]/[job-title]/matthew-j-martin-resume-for-[job-title]-[company-name].md`
-2. PDF - `jobs/[company-name]/[job-title]/matthew-j-martin-resume-for-[job-title]-[company-name].pdf`
-3. Word - `matthew-j-martin-resume-for-[job-title]-[company-name].docx`
-
-Upload the the PDF & Word versions of the resume to the "Resumes" column of the Notion Job Application Tracker.
-
-Mark status as "Resume Drafted"
-
+Matthew J. Martin · [LinkedIn](https://linkedin.com/in/matthewjosephmartin) · [GitHub](https://github.com/matmar10) · me@matmar10.com
