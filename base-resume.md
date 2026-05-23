@@ -2,7 +2,7 @@
 
 **Staff Software Engineer, Specializing in Payments**
 
-me@matmar10.com | (415) 601-4879 | Brooklyn, NY 11225 | US Citizen | Eastern Timezone
+me@matmar10.com | (315) 366-7686 | Brooklyn, NY 11225 | US Citizen | Eastern Timezone
 
 
 ## Summary of Qualifications
@@ -38,7 +38,7 @@ Crowdfunding platform processing 100+ transactions per second at peak volume, wi
 - Optimized backend performance for high-throughput, data-intensive payment processing operations
 
 ### Interim Head of Engineering (Contract) — LaunchGood, Inc.
-**Oct. 2021 to Dec. 2024** | Detroit, MI (remote)
+**Oct. 2021 to Dec. 2023** | Detroit, MI (remote)
 
 - Dramatically increased engineering team velocity from 1 release every 3 months, to average of 2+ releases per day
 - Conceived, architected, and led shift towards modern technology stack and microservices architecture
@@ -88,7 +88,7 @@ White-label digital banking mobile and tablet solutions for consumer banking ind
 ### Sr. Frontend Engineer — Boku, Inc.
 **Sep. 2010 to Apr. 2013** | San Francisco, CA
 
-White-label digital banking mobile and tablet solutions for consumer banking industry
+Mobile payments platform processing transactions across major carrier networks globally
 
 **Key technologies:** JS, jQuery, PHP, HTML, Java, MySQL, REST API, Card Industry, PCI, NFC, Mobile-Wallet, MasterCard network, mobile payments, telecom/sms/mms
 

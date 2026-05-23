@@ -7,12 +7,14 @@ nest.js: 9
 typescript: 8
 python: 3
 go: 2
+rust: 3
 php: 6
 java: 5
 perl: 3
 
 # Frontend
 react: 7
+remix: 0
 next.js: 7
 angular: 6
 svelte: 4
@@ -151,7 +153,9 @@ webassembly: 3
 
 # Observability
 opentelemetry: 3
-datadog/grafana: 6
+datadog/grafana: 7
+sentry: 5
+posthog: 7
 
 # Feature Flags
 feature-flags/launchdarkly: 8
