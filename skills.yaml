@@ -14,6 +14,7 @@ perl: 3
 
 # Frontend
 react: 7
+react-native: 0
 remix: 0
 next.js: 7
 angular: 6
@@ -72,7 +73,8 @@ multi-currency: 8
 cross-border-payments: 8
 
 # Data & Functional
-data-processing-pipelines: 3
+data-processing-pipelines: 7
+batch-processing: 7
 functional-programming: 5
 oop-design: 7
 
@@ -162,6 +164,8 @@ feature-flags/launchdarkly: 8
 
 # Auth
 oauth2/oidc/auth0: 8
+fido2/webauthn: 3
+jwt: 9
 
 # Compliance
 soc2: 7
@@ -173,6 +177,18 @@ graphql: 7
 aws-api-gateway: 7
 aws-sqs: 7
 aws-dynamodb: 7
+aws-elasticache/valkey: 9
+aws-aurora/rds-proxy: 8
+clickhouse: 0
+
+# Communications
+twilio: 8
+
+# Healthcare
+hl7-fhir-ehr: 0
+
+# Data Processing
+apache-spark/databricks: 3
 
 # Niche tools (Noetica mentions)
 jujutsu: 0
