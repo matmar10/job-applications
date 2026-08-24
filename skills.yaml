@@ -142,6 +142,9 @@ stripe-api: 8
 # Workflow Orchestration
 temporal: 3
 
+# Concurrency
+concurrent-programming/mutexes: 3
+
 # Hosted / Serverless Platforms
 supabase: 0
 planetscale/neon: 1

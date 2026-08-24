@@ -16,7 +16,7 @@ The README defines a two-phase process:
 2. **Phase II** — Raw job reqs are placed as `.txt` files in the `reqs/` folder. For each req file:
    - **(A) Catalog**: Read the req from `reqs/`, create `jobs/[company-name]/` folder (kebab-case), move the req file into it as `jobs/[company-name]/[job-title].txt`, add to the [Notion Job Application Tracker](https://www.notion.so/matthewjosephmartin/Job-Application-Tracker-024c2cd0faf7827faa8d8178801b58e9). Set "Next Action" to "Submit Application" and include the job req URL in the database entry.
    - **(B) Skills Match**: Extract keywords from the job req, cross-reference with `skills.yaml`, prompt candidate on gaps.
-   - **(C) Tailored Resume**: Generate role-specific resume from `base-resume.md`, saved as `jobs/[company-name]/[job-title]/matthew-j-martin-resume-for-[job-title]-[company-name].md`. Then run `./generate-resume.sh <path-to-resume.md>` to produce the `.pdf` and `.docx` files, then `./upload-resume.sh <path-to-resume.md>` to upload them to Google Drive. Use the output URLs to set the Notion tracker's "Resumes" file property. Mark status "Resume Drafted".
+   - **(C) Tailored Resume**: Generate role-specific resume from `base-resume.md`, saved as `jobs/[company-name]/[job-title]/matthew-j-martin-resume-for-[job-title]-[company-name].md`. Then run `./generate-resume.sh <path-to-resume.md>` to produce the `.pdf` and `.docx` files. Mark status "Resume Drafted" in Notion.
      - **Startup roles**: If the company is a startup (early-stage, seed, Series A–C, or otherwise described as a startup), prepend **"Preference for early stage, high-pace startups"** as the very first bullet in the Summary of Qualifications section.
      - **Formatting**: Do not include horizontal line breaks (`---`) anywhere in the resume markdown.
      - **Footer**: Every PDF and DOCX must include a footer reading "Resume of Matthew Joseph Martin – Staff Software Engineer  Page X of Y". This is handled automatically by `generate-resume.sh` (Typst header-includes for PDF; `add-footer.py` post-processor for DOCX) — no manual action needed.
@@ -33,13 +33,12 @@ The README defines a two-phase process:
 - `generate-resume.sh` — Converts a `.md` resume to `.pdf` (pandoc+typst with custom template and footer) and `.docx` (pandoc + `add-footer.py`)
 - `add-footer.py` — Post-processes `.docx` files to inject the footer via python-docx (called automatically by `generate-resume.sh`)
 - `resume-template.typst` — Custom Typst template used by `generate-resume.sh` for PDF generation
-- `upload-resume.sh` — Uploads `.pdf` and `.docx` to Google Drive (shareable links), outputs URLs for Notion
 - `reqs/` — Incoming raw job requirement `.txt` files to be processed
 - `jobs/` — Per-company folders with job reqs and tailored resumes
 
 ## Integrations
 
-- **Notion** — Job Application Tracker database for status tracking, resume uploads, and application catalog. Use the Notion MCP tools to interact with it.
+- **Notion** — Job Application Tracker database for status tracking and application catalog. Use the Notion MCP tools to interact with it.
 
 ## Conventions
 
